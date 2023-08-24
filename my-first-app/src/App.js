@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Testimonio from './Components/Testimonio';
+import testimonialsData from './Components/testimonialsData';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title-testimony">Here is what our alumni say about freeCodeCamp:</h1>
+      {testimonialsData.map((item) => (
+        <Testimonio
+          image ={item.image}
+          name={item.name}
+          country={item.country}
+          job={item.job}
+          company={item.company}
+          testimony={item.testimony}/> 
+      ))}
     </div>
   );
 }
